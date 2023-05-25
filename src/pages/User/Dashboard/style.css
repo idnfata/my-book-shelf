@@ -1,0 +1,30 @@
+.coba {
+    margin-top: 15px;
+}
+
+.range {
+    display: flex;
+}
+
+.range-start {
+    background-color: #244B99;
+    width: 20px;
+    height: 20px;
+    border: 6px solid #e5e5ec;
+    border-radius: 50%;
+}
+
+.range-line {
+    width: 100%;
+    margin: 8px 3px 0;
+    border-top: 4px dotted #244B99;
+}
+
+.range-end {
+    background-color: #e5e5ec;
+    width: 20px;
+    height: 20px;
+    border: 6px solid #244B99;
+    border-radius: 50%;
+
+}

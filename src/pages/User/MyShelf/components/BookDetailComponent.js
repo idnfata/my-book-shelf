@@ -258,6 +258,8 @@ const BookInformationValue = styled.div`
 `;
 
 const BookDetailComponent = ({ data }) => {
+  console.log('data', data);
+  const year = data?.published?.split('-') ?? '2000';
   return (
     <React.Fragment>
       <Grid container spacing={2}>
@@ -284,7 +286,7 @@ const BookDetailComponent = ({ data }) => {
           <BookDescription>
             <p className="book-title">{data?.Title ?? "Don’t Make Me Think"}</p>
             <p className="book-author">
-              By <span>{data?.author ?? "Steve Krug"}</span>, 2000
+              By <span>{data?.author ?? "Steve Krug"}</span>, {year[0]}
             </p>
             <p className="cetakan">Second Edition</p>
             <div className="book-information">
@@ -295,7 +297,7 @@ const BookDetailComponent = ({ data }) => {
                 <img src={IconStar} />
                 <img src={IconStar} />
               </div>
-              <p className="rating-text">5.0 Ratings</p>
+              <p className="rating-text">{data?.rating} Ratings</p>
               <p className="rating-text">25 Currently reading</p>
               <p className="rating-text">119 Have read</p>
             </div>
@@ -310,14 +312,8 @@ const BookDetailComponent = ({ data }) => {
               Previews available in: <span>English</span>
             </p>
             <p className="desc-text">
-              Since Don’t Make Me Think was first published in 2000, hundreds of
-              thousands of Web designers and developers have relied on usability
-              guru Steve Krug’s guide to help them understand the principles of
-              intuitive navigation and information design. Witty,
-              commonsensical, and eminently practical, it’s one of the
-              best-loved and most... <span> Read more</span>
+              {data?.description} <span> Read more</span>
             </p>
-
             <BookInformation>
               <h3>Book Details</h3>
               <h4>Published in</h4>
